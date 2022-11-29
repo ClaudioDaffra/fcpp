@@ -13,8 +13,51 @@ as HTML for simple web sites.
 WWW:   http://daniel.haxx.se/projects/fcpp/
 Code:  https://github.com/bagder/fcpp
 
-[2022] 	fix memory leak	( valgrind check )
-		compile with :
-		windows	:	cl
-				:	tdm
-		Linux	:	gcc
+[1993]  fcpp
+[2011]
+
+GIT    https://github.com/ClaudioDaffra/fccp
+
+[2022]  fix memory leak    ( valgrind check )
+        compile with :
+        windows     :    Microsoft (R) C/C++ Optimizing Compiler versione 19.29.30147 per x86
+                    :    gcc version 10.3.0 (tdm64-1)
+        Linux       :    gcc version 11.3.0 (Ubuntu 11.3.0-1ubuntu1~22.04)
+
+Usage: cpp [options] [infile [outfile] ]
+
+The following options are valid:
+
+  -B    No mahcine specific built-in symbols
+  -b    Output any parentheses, brace or bracket unbalance
+  -C    Write source file comments to output
+  -D    Define a symbol with the given (optional) value "symbol[=value]"
+  -d    Display all specified options
+  -E    Ignore non-fatal errors
+  -F    Output all included file names on stderr
+  -f    Output all defined functions' names on stderr
+  -H    Output all whitespaces from the source file
+  -h    Output this help text
+  -I    Add directory to the #include search list
+  -J    Allow nested comments
+  -j    Enable warnings for nested comments
+  -LL   Don't output #line instructions
+  -L    Don't output the 'line' keyword in "#line" instructions
+  -M    Don't warn for missing include files
+  -N    Don't predefine target-specific names
+  -n    Toggle prefs usage
+  -P    Don't recognize C++ comment style
+  -p    Enable warnings on non ANSI preprocessor instructions
+  -Q    Ignore but visualize undefined flags
+  -q    Ignore all undefined flags
+  -R    Evaluate the right part first in symbol concatenations
+  -s    Include the following string at the top of each function
+  -S    Specify sizes for #if sizeof
+  -t    This function should not get an initial function
+  -U    Undefine symbol
+  -V    Don't output version information
+  -W    Output all #defines
+  -WWW  Web mode preprocessing
+  -w    Only output #defines
+  -X    Include file
+
