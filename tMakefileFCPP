@@ -1,0 +1,42 @@
+APP=fcpp.exe
+CC=gcc
+LINK=gcc
+
+FLAGS=-std=c11 -Wall  -Wextra -pedantic -Wno-restrict
+LIBRARYS=
+
+ALL : $(APP)
+
+ODIR=obj
+SDIR=
+BDIR=bin
+LDIR=lib
+
+OBJS =  gc.obj			\
+		cpp1.obj		\
+		cpp2.obj		\
+		cpp3.obj		\
+		cpp4.obj		\
+		cpp5.obj		\
+		cpp6.obj		\
+		usecpp.obj
+
+LIBS = 
+
+OBJ = $(patsubst %,$(ODIR)/%,$(OBJS))
+
+$(ODIR)/%.obj: $(SDIR)%.c 
+		$(CC) -c -o $@ $< $(FLAGS)
+
+LIB = $(patsubst %,$(LDIR)/%,$(LIBS))
+
+$(LDIR)/%.obj: $(LDIR)/%.c
+		$(CC) -c -o $@ $< $(FLAGS) 
+
+ALLOBJ =  $(OBJ) $(LIB)        
+
+$(APP):$(ALLOBJ) 
+		$(CC) -o $(BDIR)/$@ $^ $(flgags) $(LIBRARYS) 
+
+clean:
+		del bin\*.exe & del obj\*.obj del *.exe & del *.obj & del fcpp.exe

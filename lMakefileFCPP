@@ -1,0 +1,40 @@
+APP=fcpp
+CC=gcc
+LINK=gcc
+
+FLAGS=-Wall -Wextra -pedantic
+LIBRARYS=
+
+ALL : $(APP)
+
+ODIR=obj
+BDIR=bin
+
+LDIRS=lib
+
+OBJS =	gc.o			\
+		cpp1.o      	\
+		cpp2.o      	\
+		cpp3.o      	\
+		cpp4.o      	\
+		cpp5.o   		\
+		cpp6.o      	\
+		usecpp.o
+
+
+o = $(patsubst %,$(ODIR)/%,$(OBJS))
+$(ODIR)/%.o: %.c
+		$(CC) -c -o $@ $< $(FLAGS)
+
+ALLo =  $(o) 
+
+$(APP):$(ALLo) 
+		$(CC) -o $(BDIR)/$@ $^ $(flgags) $(LIBRARYS) 
+
+clean:
+		rm bin/*        ;
+		rm obj/*.o      ;
+		rm tst/*.out    ;
+		rm *.o ;
+		rm fcpp ;
+		
